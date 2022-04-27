@@ -9,9 +9,14 @@ void SysTick_Init(void){
 void Systick_wait100ms(){
 NVIC_ST_RELOAD_R =8000000 -1;
 	NVIC_ST_CURRENT_R =0;
-	while((	NVIC_ST_CTRL_R    & 0x00010000)==0){
-		if(NVIC_ST_RELOAD_R !=0){
-			sprintf("%d",NVIC_ST_RELOAD_R );
-		}
-	}
-    }
+for(int i=n;i>0;i--){
+printf("%d",i);
+while(( NVIC_ST_CTRL_R & 0x00010000)==0){}
+}
+}
+int main(){
+SysTick_Init();
+Systick_wait1sec(int x);
+}
+
+
